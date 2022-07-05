@@ -1,10 +1,27 @@
 package com.ll.exam;
 
 public class Calculator {
-    public static int add(String s) {
-        if( s.equals("10+20")){
-            return 30;
+    public static int run(String s) {
+        boolean inMinus = s.indexOf('-') != -1;
+
+        if(inMinus){
+            return runMinus(s);
+        }else {
+            return runPlus(s);
         }
-        return 40;
+    }
+
+    private static int runPlus(String s) {
+        String[] sBits = s.split("\\+");
+        int a = Integer.parseInt(sBits[0]);
+        int b = Integer.parseInt(sBits[1]);
+        return a + b;
+    }
+
+    private static int runMinus(String s) {
+        String[] sBits = s.split("\\-");
+        int a = Integer.parseInt(sBits[0]);
+        int b = Integer.parseInt(sBits[1]);
+        return a - b;
     }
 }
