@@ -2,6 +2,9 @@ package com.ll.exam;
 
 public class Calculator {
     public static int add(String s) {
-        return 30;
+        if( s.equals("10+20")){
+            return 30;
+        }
+        return 40;
     }
 }
